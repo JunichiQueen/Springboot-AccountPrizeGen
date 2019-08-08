@@ -6,6 +6,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import com.qa.service.AccountPrizeGenService;
 
@@ -23,8 +24,8 @@ public class AccountPrizeGenControllerTests {
 		
 		String reply = service.prizeDraw("333333");
 		assertEquals(controller.getPrize("333333"), reply);
-//		Mockito.when(service.prizeDraw("333333")).thenReturn("50");
-//		assertEquals(controller.getPrize("333333"), "50");
+		Mockito.when(service.prizeDraw("333333")).thenReturn("50");
+		assertEquals(controller.getPrize("333333"), "50");
 	}
 
 }
